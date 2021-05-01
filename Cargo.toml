@@ -1,9 +1,9 @@
 [package]
 name = "urlsup"
-version = "1.0.0"
+version = "1.0.1"
 description = "CLI to validate URLs in files"
 authors = ["Simon Egersand <s.egersand@gmail.com>"]
-keywords = ["cli", "ci", "travis", "circleci", "links"]
+keywords = ["cli", "ci", "github", "action", "links"]
 
 repository = "https://github.com/simeg/urlsup"
 homepage = "https://github.com/simeg/urlsup"
@@ -17,23 +17,20 @@ include = [
 	"README.md"
 ]
 
-[badges]
-travis-ci = { repository = "simeg/urlsup", branch = "master" }
-codecov = { repository = "simeg/urlsup", branch = "master", service = "github" }
-
 [dependencies]
+async-trait = "0.1.42"
 clap = { version = "2.33.0", default-features = false }
-reqwest = { version = "0.10.4" }
-tokio = { version = "0.2.18", features = ["macros"] }
-futures = "0.3.4"
-grep = "0.2.5"
-linkify = "0.4.0"
-num_cpus = "1.12.0"
+reqwest = "0.11.1"
+tokio = { version = "1.2.0", features = ["macros", "rt-multi-thread"] }
+futures = "0.3.13"
+grep = "0.2.7"
+linkify = "0.5.0"
+num_cpus = "1.13.0"
 spinners = "1.2.0"
-term = "0.6.1"
+term = "0.7.0"
 
 [dev-dependencies]
-tempfile = "3.1.0"
-mockito = "0.25.1"
-assert_cmd = "1.0.1"
-predicates = "1.0.4"
+tempfile = "3.2.0"
+mockito = "0.29.0"
+assert_cmd = "1.0.3"
+predicates = "1.0.7"
